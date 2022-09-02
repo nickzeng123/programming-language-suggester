@@ -4,15 +4,12 @@ window.addEventListener("load", function() {
   let suggestion = document.querySelector("div#suggestion");
 
   form.addEventListener("submit", function(event) {   
-    let question1Input = document.querySelector("input[name='question1']:checked").value;
-    let question2Input = document.querySelector("input[name='question2']:checked").value;
-    let question3Input = document.querySelector("input[name='question3']:checked").value;
-    let question4Input = document.querySelector("input[name='question4']:checked").value;
-    let question5Input = document.querySelector("input[name='question5']:checked").value;
-
+    let questionInput = document.querySelector("input[name='question1']:checked").value;
+  
+    let answerArray = [];
     let score;
-    if (question1Input === "yes" || question2Input === "yes" || question3Input === "yes" || question4Input === "yes" || question5Input === "yes") {
-      score = score + 10;
+    if (question1Input === "yes" || question2Input === "yes" || question3Input === "yes"|| question4Input === "yes" || question5Input === "yes") {
+      answerArray.push("yes");
     }
 
     let result;
@@ -20,12 +17,12 @@ window.addEventListener("load", function() {
       result = "Javascript";
     } else if (score >= 20) {
       result = "Python";
-    } else if (score < 20) {
+    } else {
       result = "HTML";
     }
-    
+
+    document.querySelector("span#output").innerText = result;
     form.removeAttribute("class");  
-    document.getElementById("output").innerText = result;
     event.preventDefault();
   });
 
