@@ -7,34 +7,32 @@ function handleSurvey(event) {
   const questionInput5 = document.querySelectorAll("input[name='question5']:checked").value;
   
   let score;
-    if (questionInput1 === "yes" || questionInput3 === "yes") {
-      score = 1;
-    } else if (questionInput2 === "yes" || questionInput4 === "yes") {
-      score = 2;
-    } else if (questionInput5 === "yes") {
-      score = 3;
-    }
+  if (questionInput1 === "yes" || questionInput3 === "yes") {
+    score = 1;
+  } else if (questionInput2 === "yes" || questionInput4 === "yes") {
+    score = 2;
+  } else if (questionInput5 === "yes") {
+    score = 3;
+  }
 
   let result;
-    if (score === 1) {
-      result = "Python";
-    } else if (score === 2) {
-      result = "Javascript";
-    } else if (score === 3) {
-      result = "Swift";
-    } else {
-      result = "HTML";
-    }
+  if (score === 1) {
+    result = "Python";
+  } else if (score === 2) {
+    result = "Javascript";
+  } else if (score === 3) {
+    result = "Swift";
+  } else {
+    result = "HTML";
+  }
+  document.querySelector("span#output").innerText = result;
+  suggesion.removeAttribute("class");    
 }
 
 window.addEventListener("load", function() {
   let form = document.querySelector("form#survey");
   let suggestion = document.querySelector("div#suggestion");
-
   form.addEventListener("submit", handleSurvey);
-    
-  document.querySelector("span#output").innerText = result;
-  suggesion.removeAttribute("class");    
 });
 
 
