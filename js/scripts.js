@@ -10,12 +10,11 @@ window.addEventListener("load", function() {
     let question4Input = document.querySelector("input[name='question4']:checked").value;
     let question5Input = document.querySelector("input[name='question5']:checked").value;
 
-    let result;
     let score;
     if (question1Input === "yes" || question2Input === "yes" || question3Input === "yes" || question4Input === "yes" || question5Input === "yes") {
       score = score + 10;
     }
-
+    
     form.removeAttribute("class");  
     document.getElementById("output").innerText = result;
     event.preventDefault();
