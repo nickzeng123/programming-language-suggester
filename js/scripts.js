@@ -14,6 +14,15 @@ window.addEventListener("load", function() {
     if (question1Input === "yes" || question2Input === "yes" || question3Input === "yes" || question4Input === "yes" || question5Input === "yes") {
       score = score + 10;
     }
+
+    let result;
+    if (score >= 40) {
+      result = "Javascript";
+    } else if (score >= 20) {
+      result = "Python";
+    } else if (score < 20) {
+      result = "HTML";
+    }
     
     form.removeAttribute("class");  
     document.getElementById("output").innerText = result;
