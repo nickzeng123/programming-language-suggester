@@ -1,20 +1,25 @@
 
 window.addEventListener("load", function() {
-  const form = document.querySelector("form");
-  const suggestion = document.querySelector("div#suggestion");
+  let form = document.querySelector("form");
+  let suggestion = document.querySelector("div#suggestion");
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const question1 = document.querySelector("input[name='question1']:checked").value;
-    const question2 = document.querySelector("input[name='question2']:checked").value;
-    const question3 = document.querySelector("input[name='question3']:checked").value;
-    const question4 = document.querySelector("input[name='question4']:checked").value;
-    const question5 = document.querySelector("input[name='question5']:checked").value;
+  form.addEventListener("submit", function(event) {   
+    let question1Input = document.querySelector("input[name='question1']:checked").value;
+    let question2Input = document.querySelector("input[name='question2']:checked").value;
+    let question3Input = document.querySelector("input[name='question3']:checked").value;
+    let question4Input = document.querySelector("input[name='question4']:checked").value;
+    let question5Input = document.querySelector("input[name='question5']:checked").value;
 
+    let result;
+    let score;
+    if (question1Input === "yes" || question2Input === "yes" || question3Input === "yes" || question4Input === "yes" || question5Input === "yes") {
+      score = score + 10;
+    }
 
     form.removeAttribute("class");  
     document.getElementById("output").innerText = result;
-  })
+    event.preventDefault();
+  });
 
-})
+});
 
