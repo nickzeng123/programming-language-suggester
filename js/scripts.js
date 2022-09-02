@@ -4,13 +4,15 @@ window.addEventListener("load", function() {
   let suggestion = document.querySelector("div#suggestion");
 
   form.addEventListener("submit", function(event) {   
-    let questionInput = document.querySelector("input[name='question1']:checked").value;
-  
-    let answerArray = [];
+    const questionInputs = document.querySelectorAll("input[name='question']:checked").value;
+    const questionInputsArray = Array.from(questionInputs);
+
     let score;
-    if (question1Input === "yes" || question2Input === "yes" || question3Input === "yes"|| question4Input === "yes" || question5Input === "yes") {
-      answerArray.push("yes");
-    }
+    questionInputsArray.forEach(function(element) {
+      if (element === "yes") {
+        score = score + 10;
+      };
+    })
 
     let result;
     if (score >= 40) {
