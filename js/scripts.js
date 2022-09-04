@@ -1,10 +1,10 @@
 function handleSuggestion(event) {
   event.preventDefault();
-  const questionInput1 = document.querySelector("input[name='question1']:checked").value;
-  const questionInput2 = document.querySelector("input[name='question2']:checked").value;
-  const questionInput3 = document.querySelector("input[name='question3']:checked").value;
-  const questionInput4 = document.querySelector("input[name='question4']:checked").value;
-  const questionInput5 = document.querySelector("input[name='question5']:checked").value;
+  const questionInput1 = document.querySelector("input[name='question1Input']:checked").value;
+  const questionInput2 = document.querySelector("input[name='question2Input']:checked").value;
+  const questionInput3 = document.querySelector("input[name='question3Input']:checked").value;
+  const questionInput4 = document.querySelector("input[name='question4Input']:checked").value;
+  const questionInput5 = document.querySelector("input[name='question5Input']:checked").value;
   
   let score;
   if (questionInput1 === "yes" || questionInput3 === "yes") {
@@ -29,10 +29,24 @@ function handleSuggestion(event) {
    suggestion.removeAttribute("class");
 }
 
+form.addEventListener("submit", function() {
+  resetBtn.removeAttribute("class");
+});
+
 window.addEventListener("load", function() {
   let form = document.querySelector("form#survey");
   let suggestion = document.querySelector("div#suggestion");
+  let resetBtn = document.querySelector("button#reset");
   form.addEventListener("submit", handleSuggestion);
 });
+
+resetBtn.addEventListener("click", function() {
+  document.querySelector("questionInput1").value = null;
+  document.querySelector("questionInput2").value = null;
+  document.querySelector("questionInput3").value = null;
+  document.querySelector("questionInput4").value = null;
+  document.querySelector("questionInput5").value = null;
+})
+
 
 
