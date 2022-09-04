@@ -25,14 +25,14 @@ function handleSuggestion(event) {
   } else {
     result = "HTML";
   }
-  document.querySelector("span#output").innerText = result;    
+  document.querySelector("span#output").innerText = result;   
+   suggestion.removeAttribute("class");
 }
 
 window.addEventListener("load", function() {
   let form = document.querySelector("form#survey");
   let suggestion = document.querySelector("div#suggestion");
   form.addEventListener("submit", handleSuggestion);
-  suggestion.removeAttribute("class");
 });
 
 
