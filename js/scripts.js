@@ -6,6 +6,8 @@ function handleSuggestion(event) {
   let questionInput4 = document.querySelector("input[name='question4Input']:checked").value;
   let questionInput5 = document.querySelector("input[name='question5Input']:checked").value;
   
+  // change values to 0 and 1 and use parseInt, add all answers = result
+  
   let score;
   if (questionInput1 === "yes" || questionInput3 === "yes") {
     score = 1;
@@ -42,13 +44,15 @@ window.addEventListener("load", function() {
 
   resetBtn.addEventListener("click", function() {
     suggestion.setAttribute("class", "hidden");
-    document.getElementById("question1Input").value = null;
-    document.getElementById("question2Input").value = null;
-    document.getElementById("question3Input").value = null;
-    document.getElementById("question4Input").value = null;
-    document.getElementById("question5Input").value = null;
+    document.getElementById("question1Input").value = false; 
+    document.getElementById("question2Input").value = false;
+    document.getElementById("question3Input").value = false;
+    document.getElementById("question4Input").value = false;
+    document.getElementById("question5Input").value = false;
   })
 });
+
+// set 
 
 
 
