@@ -47,18 +47,6 @@ window.addEventListener("load", function() {
 
   resetBtn.addEventListener("click", function() {
     suggestion.setAttribute("class", "hidden");
-<<<<<<< HEAD
-    document.getElementById("question1Input").value = false; 
-    document.getElementById("question2Input").value = false;
-    document.getElementById("question3Input").value = false;
-    document.getElementById("question4Input").value = false;
-    document.getElementById("question5Input").value = false;
-  })
-});
-
-// set 
-
-=======
     document.getElementById("question1Input").value = null;
     document.getElementById("question2Input").value = null;
     document.getElementById("question3Input").value = null;
@@ -67,7 +55,6 @@ window.addEventListener("load", function() {
   })
 });
 
->>>>>>> 8e8f7d9df499464a910c9e3385f419a82ae8a4bf
 
 
 
