@@ -5,12 +5,9 @@ function handleSuggestion(event) {
   let questionInput3 = document.querySelector("input[name='question3Input']:checked").value;
   let questionInput4 = document.querySelector("input[name='question4Input']:checked").value;
   let questionInput5 = document.querySelector("input[name='question5Input']:checked").value;
-<<<<<<< HEAD
-  
+
   // change values to 0 and 1 and use parseInt, add all answers = result
-=======
->>>>>>> 8e8f7d9df499464a910c9e3385f419a82ae8a4bf
-  
+
   let score;
   if (questionInput1 === "yes" || questionInput3 === "yes") {
     score = 1;
